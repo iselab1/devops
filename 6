@@ -1,0 +1,12 @@
+#!/bin/bash
+APP_NAME="my-app"
+APP_VERSION="1.0.0"
+DEPLOY_DIR="/opt/${APP_NAME}-${APP_VERSION}"
+DATE_TIME= $(date + "%Y-%m-%d%H:%M:%S")
+sed-i"s/{{DATETIME}}/$DATE_TIME/g"/tmp/my-app/index.html
+sudo service jboss stop
+sudo rm -rf $DEPLOY_DIR
+sudo mkdir-p $DEPLOY_DIR
+sudo cp -R/tmp/my-app/*$DEPLOY_DIR/
+sudo service jboss start
+rm -rf/tmp/my-app
