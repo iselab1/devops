@@ -1,0 +1,16 @@
+sudo su -
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
+tar -xvzf apache-tomcat-8.5.85.tar.gz
+cd apache-tomcat-8.5.85
+cd bin
+yum install java
+find / -name context.xml
+vi /opt/apache-tomcat-8.5.85/webapps/host-manager/META-INF/context.xml
+vi /opt/apache-tomcat-8.5.85/webapps/manager/META-INF/context.xml
+cd ..
+cd conf/
+vi tomcat-users.xml
+cd ..
+cd bin
+./startup.sh
