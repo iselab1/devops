@@ -5,3 +5,6 @@ tar -xvzf apache-tomcat-8.5.85.tar.gz
 cd apache-tomcat-8.5.85
 cd bin
 yum install java
+cd ..
+cd bin
+./startup.sh
